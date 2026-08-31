@@ -217,7 +217,7 @@ test('阿里：仅实习 + 人才专项识别 + 上限2000（校招批次不再�
   assert.equal(j.department, '淘天集团');
   assert.equal(j.published_at, 1787566228000);
   assert.equal(j.talent, 0);
-  assert.ok(j.url.includes('positionDetail?positionId=199907620013'));
+  assert.ok(j.url.includes('/campus/position/199907620013'));
   const star = result.jobs.find((x) => x.id === '阿里巴巴:199907620014');
   assert.equal(star.title, '阿里星-大模型算法实习生');
   assert.equal(star.recruit_type, '实习');

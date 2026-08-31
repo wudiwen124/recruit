@@ -85,7 +85,7 @@ function mapJob(item, batch = {}) {
     city: Array.isArray(item.workLocations) ? item.workLocations.join('/') : '',
     department: Array.isArray(item.circleNames) && item.circleNames.length ? clean(item.circleNames[0], 200) : '',
     description: clean([item.description, item.requirement].filter(Boolean).join('\n'), 8000),
-    url: `${ROOT}/campus/positionDetail?positionId=${id}`,
+    url: `${ROOT}/campus/position/${id}`,
     published_at: item.modifyTime || item.publishTime,
     talent: talentByBatch || talentByTitle ? 1 : 0,
   };
