@@ -1,0 +1,16 @@
+{
+  "name": "recruit-aggregator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "招聘信息聚合网站：聚合字节跳动、阿里巴巴、腾讯、拼多多、美团、快手的技术/研发岗位。",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "crawl": "node --disable-warning=ExperimentalWarning src/crawler/index.js",
+    "probe": "node --disable-warning=ExperimentalWarning src/crawler/index.js --probe",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

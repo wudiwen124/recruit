@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实习招聘聚合-杨逍爹制作</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='22' font-size='17' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3E聘%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1>实习招聘聚合-杨逍爹制作</h1>
+        <p class="subtitle">字节跳动 · 阿里巴巴 · 腾讯 · 拼多多 · 美团 · 快手 技术/研发实习岗位</p>
+      </div>
+      <div class="header-right">
+        <span id="lastUpdate" class="last-update">数据加载中…</span>
+        <button id="refreshBtn" class="btn" title="立即重新抓取">重新抓取</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="statusBanner" class="status-banner" aria-live="polite"></section>
+
+    <nav id="tabs" class="tabs" role="tablist">
+      <button class="tab active" data-period="all" role="tab" aria-selected="true">6个月内更新 <span class="tab-count" id="count-all">-</span></button>
+      <button class="tab" data-period="today" role="tab" aria-selected="false">今日更新 <span class="tab-count" id="count-today">-</span></button>
+      <button class="tab" data-period="week" role="tab" aria-selected="false">今周更新 <span class="tab-count" id="count-week">-</span></button>
+      <button class="tab" data-period="month" role="tab" aria-selected="false">今月更新 <span class="tab-count" id="count-month">-</span></button>
+      <button class="tab" data-period="missing" role="tab" aria-selected="false">无时间标注 <span class="tab-count" id="count-missing">-</span></button>
+    </nav>
+
+    <section class="filters">
+      <select id="filterCompany" class="filter-input">
+        <option value="">全部公司</option>
+      </select>
+      <select id="filterTalent" class="filter-input">
+        <option value="">人才专项：全部</option>
+        <option value="1">人才专项：是</option>
+        <option value="0">人才专项：否</option>
+      </select>
+      <input id="filterQ" class="filter-input" type="search" placeholder="关键词，如：算法 / 前端 / 大模型">
+      <input id="filterCity" class="filter-input" type="search" placeholder="城市，如：北京 / 上海">
+      <button id="clearFilters" class="btn btn-ghost">清空筛选</button>
+    </section>
+
+    <p id="resultInfo" class="result-info"></p>
+    <section id="jobList" class="job-list"></section>
+    <div id="paginationWrap" class="load-more-wrap hidden">
+      <div class="pagination">
+        <button id="prevPageBtn" class="page-btn" title="上一页">‹ 上一页</button>
+        <div id="pageNumbers" class="page-numbers"></div>
+        <button id="nextPageBtn" class="page-btn" title="下一页">下一页 ›</button>
+        <span class="page-jump-label">跳转</span>
+        <input id="jumpPageInput" class="page-input" type="number" min="1" inputmode="numeric" aria-label="跳转到第几页">
+        <button id="jumpPageBtn" class="page-btn">跳页</button>
+      </div>
+    </div>
+    <p id="emptyTip" class="empty-tip hidden">当前筛选条件下暂无岗位</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      数据来源于各公司招聘官网公开接口，仅供个人学习参考；本站仅聚合实习岗位，每 2 小时自动更新。窗口：6个月内更新=近6个月、今日=近24小时、今周=近7天、今月=近30天。
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

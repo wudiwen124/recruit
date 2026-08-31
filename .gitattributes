@@ -1,0 +1,3 @@
+# 统一换行符：文本文件按平台转换，bat 保持 CRLF
+* text=auto
+*.bat text eol=crlf
